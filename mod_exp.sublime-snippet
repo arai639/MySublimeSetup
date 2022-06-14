@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+int pow(int a, int b, int m)
+{
+    int ans = 1;
+    while(b > 0)
+    {
+        if(b & 1)
+            ans = (ans * a) % m;
+        b /= 2;
+        a = (a * a) % m;
+    }
+    return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mod_exp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

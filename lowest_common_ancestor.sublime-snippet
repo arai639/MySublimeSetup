@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+int get_lca(int a, int b) { // O(log(N))
+	if(depth[a] < depth[b]) {
+		swap(a, b);
+	}
+	// 1) Get same depth.
+	int k = depth[a] - depth[b];
+	for(int j = LOG - 1; j >= 0; j--) {
+		if(k & (1 << j)) {
+			a = up[a][j]; // parent of a
+		}
+	}
+	// 2) if b was ancestor of a then now a==b
+	if(a == b) {
+		return a;
+	}
+	// 3) move both a and b with powers of two
+	for(int j = LOG - 1; j >= 0; j--) {
+		if(up[a][j] != up[b][j]) {
+			a = up[a][j];
+			b = up[b][j];
+		}
+	}
+	return up[a][0];
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lowest common ancestor</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

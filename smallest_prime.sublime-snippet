@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+int spf[N];
+void smallest_prime()
+{
+    mem(spf,0);
+    for(int i=2;i<N;i++)
+    {
+        if(spf[i]==0)
+        {
+            spf[i]=i;
+            for(int j=i*i;j<N;j+=i)
+            if(spf[j]==0)
+            spf[j]=i;
+        }
+    }
+   
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>smallest prime function</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

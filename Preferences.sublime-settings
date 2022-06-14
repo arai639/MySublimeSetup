@@ -1,0 +1,11 @@
+{
+	/*"font_size": 18,*/
+	"ignored_packages":
+	[
+		"Package Control",
+		"Vintage"
+	],
+	// "auto_complete": false
+	/*"font_size": 14,*/
+	"font_size": 12,
+}

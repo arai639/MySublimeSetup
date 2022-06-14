@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+//function for calculating mmi , x would give mmi of m under c and y would give mmi of c under m 
+int x,y;
+int mm=1000000007;
+void ext_euclid(int m,int c)
+{
+    if(c==0)
+    {  
+        x=1;
+        y=0;
+    }
+    else
+    {
+        ext_euclid(c,m%c);
+        int temp=x;
+        x=y;
+        y=temp-(m/c)*y;
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mmi</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

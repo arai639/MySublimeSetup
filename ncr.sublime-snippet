@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+int inv[3000000+5],fac_inv[3000000+5],fac[3000000+5];
+void initialize()
+{
+	int i;
+	inv[1]=1;
+	for(i=2;i<=3000000;i++)
+		inv[i]=(mod-mod/i)*inv[mod%i]%mod; 
+	fac[0]=fac[1]=1;
+	for(i=2;i<=3000000;i++)
+		fac[i]=i*fac[i-1]%mod;
+	fac_inv[0]=fac_inv[1]=1;
+	for(i=2;i<=3000000;i++)
+		fac_inv[i]=inv[i]*fac_inv[i-1]%mod;
+}
+
+int ncr(int n,int r)
+{
+	if(n<r) return 0;
+	return (fac[n]*fac_inv[r]%mod)*fac_inv[n-r]%mod;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ncr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+const int block_size = 500;
+// { {l,r}, index}
+bool mo_comparator(pair<pair<int, int>, int> p, pair<pair<int, int>, int> q)
+{
+    if (p.fi.fi / block_size != q.fi.fi / block_size)
+        return p < q;
+    return ((p.fi.fi / block_size) & 1) ? (p.fi.se > q.fi.se) : (p.fi.se < q.fi.se);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mo's algorithm</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

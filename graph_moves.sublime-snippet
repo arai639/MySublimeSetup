@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+int x2[]={+1,-1,+0,+0};
+int y2[]={+0,+0,+1,-1};
+int x2[]={+0,+0,+1,-1,-1,+1,-1,+1};
+int y2[]={-1,+1,+0,+0,+1,+1,-1,-1};
+int x2[]={-2,-2,-1,-1,+1,+1,+2,+2};
+int y2[]={-1,+1,-2,+2,-2,+2,-1,+1};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>graph_moves</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
